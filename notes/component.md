@@ -83,6 +83,7 @@ that child components have been initialized, or when changes are detected. with 
         - ngAfterViewChecked( ) — Respond after Angular checks the component’s views and child views / the view that a directive is in.Called after the ngAfterViewInit( ) and every subsequent ngAfterContentChecked( ).
         - ngOnDestroy( ) — Cleanup just before Angular destroys the directive/component. Unsubscribe Observables and detach event handlers to avoid memory leaks.Called just before Angular destroys the directive/component.
         ![image from viblo.asia](images/4a2dc72f-f6f7-458b-95e6-9c1ec72a337c.png)
+        
 The OnInit , OnChanges , and OnDestroy hooks are the most commonly used lifecycle hooks.
 
 The DoCheck , AfterContentChecked , and AfterViewChecked hooks are most
