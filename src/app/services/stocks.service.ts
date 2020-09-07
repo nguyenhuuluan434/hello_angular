@@ -14,6 +14,7 @@ export interface StockInterface {
 /*Injectable annotate make wire up dependency injection*/
 @Injectable()
 export class StocksService {
+  // Injects the HttpClient service into the controller, constructor injection
   constructor(private http: HttpClient) {
   }
 
