@@ -12,7 +12,8 @@ import {AlertComponent} from './alert/alert.component';
 
 import {LocalStorageService} from './services/local-storage.service';
 import {AccountService} from './services/account.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {InterceptorService} from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,11 @@ import {HttpClientModule} from '@angular/common/http';
     LocalStorageService,
     CurrencyPipe,
     AccountService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
