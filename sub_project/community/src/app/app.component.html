@@ -1,0 +1,36 @@
+<clr-main-container>
+  <header class="header header-3">
+    <div class="branding">
+      <a>
+        <clr-icon shape="group"></clr-icon>
+        <span class="title">Community</span>
+      </a>
+    </div>
+    <div class="header-nav">
+      <a class="nav-link" routerLink="/forums"><span class="nav-text">Forums</span></a>
+      <a class="nav-link" routerLink="/blogs"><span class="nav-text">Blogs</span></a>
+    </div>
+    <div class="header-actions">
+      <a class="nav-link nav-icon">
+        <!--Here we use the binding version of the attribute on the routerLink and we pass in
+an array with an object. The syntax here is more verbose, because we have to pass in
+additional data for the router to understand that this is meant to be a secondary route.
+The object contains the outlets property, which then has an object that maps the
+name of the outlet to the specific route requested. In this case, we’re passing {chat:
+['users']} , which tells it to use the chat outlet, and then go to the path users. This
+pattern will repeat for using the secondary routes, so you’ll get to see a couple more
+examples of the structure.-->
+        <clr-icon shape="talk-bubbles" [routerLink]="[{outlets: { chat: ['users']}}]"></clr-icon>
+      </a>
+      <a class="nav-link nav-icon">
+        <clr-icon shape="logout" (click)="logout()" *ngIf="!userService.isGuest()"></clr-icon>
+      </a>
+    </div>
+  </header>
+  <div class="content-container">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</clr-main-container>
+<router-outlet name="chat"></router-outlet>
