@@ -1,6 +1,9 @@
+<!--forum only render the tile, the content will render by Threads component-->
 <header class="header">
   <div class="branding">
     <span class="title">{{forum?.title}}</span>
   </div>
 </header>
+<!--Child routes work by creating another router outlet that’s localized to the parent component,
+    and then all child routes will render inside of this new router outlet-->
 <router-outlet></router-outlet>

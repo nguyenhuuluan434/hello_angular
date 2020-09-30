@@ -18,10 +18,15 @@ import {AuthGuardService} from './services/auth-guard.service';
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   /*for secondary route*/
+  /*This will show a list of user who you can chat with*/
+  /*I also  placed these routes before the redirect and wildcard routes, because those are meant to
+  act like fallback routes*/
   {path: 'users', component: ChatListComponent, outlet: 'chat', canActivate: [AuthGuardService]},
+  /*This will be the chat experience with another user*/
   {path: 'users/:username', component: ChatComponent, outlet: 'chat', canActivate: [AuthGuardService]},
   /*for lazy load module*/
   {path: 'blogs', loadChildren: 'app/blogs/blogs.module#BlogsModule'},
+  /*fallback route*/
   {path: '', redirectTo: '/forums', pathMatch: 'full'},
   {path: '**', component: NotFoundComponent},
 ];
@@ -41,7 +46,7 @@ const appRoutes: Routes = [
     /*define root of routes*/
     RouterModule.forRoot(appRoutes),
     ForumsModule,
-    ClarityModule.forRoot()
+    ClarityModule.forRoot(),
   ],
   providers: [
     AuthGuardService,

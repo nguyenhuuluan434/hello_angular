@@ -18,9 +18,9 @@ const forumsRoutes: Routes = [
   },
   {
     path: 'forums/:forum_alias', component: ForumComponent,
-    children: [
-      {path: '', component: ThreadsComponent},
-      {path: ':thread_alias', component: ThreadComponent},
+    children: [/*Adds new children property to forum route*/
+      {path: '', component: ThreadsComponent}, /*Defines default path to render Threads component*/
+      {path: ':thread_alias', component: ThreadComponent}, /*Defines path with thread alias to render Thread component*/
     ]
   }
 ];

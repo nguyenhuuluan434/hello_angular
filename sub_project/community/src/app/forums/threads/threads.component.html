@@ -7,6 +7,8 @@
         <th>Last Post</th>
         <th>Posts</th>
       </tr>
+      <!--Notice this is a relative link, so it will append the thread alias to the current URL-->
+      <!--Which would be like forums/:forum_alias/:thread_alias-->
       <tr *ngFor="let thread of threads" [routerLink]="[thread.alias]">
         <td>{{thread.title}}</td>
         <td>{{thread.posts[0].username}}</td>

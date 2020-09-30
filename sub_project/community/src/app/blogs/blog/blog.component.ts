@@ -19,7 +19,6 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger
     this.route.params.subscribe((params: Params) => {
       this.post_id = Number.parseInt(params['post_id']);
       this.post = this.blogsService.post(this.post_id);

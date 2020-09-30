@@ -20,6 +20,13 @@ name of the outlet to the specific route requested. In this case, we’re passin
 ['users']} , which tells it to use the chat outlet, and then go to the path users. This
 pattern will repeat for using the secondary routes, so you’ll get to see a couple more
 examples of the structure.-->
+        <!--
+        [routerLink] RouterLink.routerLink: any[] | string
+        routerLink RouterLinkWithHref.routerLink: any[] | string
+        -->
+
+        <!--This is how we’ll tell the router to render this component inside of the new
+            router outlet with the name chat-->
         <clr-icon shape="talk-bubbles" [routerLink]="[{outlets: { chat: ['users']}}]"></clr-icon>
       </a>
       <a class="nav-link nav-icon">
@@ -33,4 +40,6 @@ examples of the structure.-->
     </div>
   </div>
 </clr-main-container>
+<!--secondary route what will sit atop the current page-->
+<!--the outlet has a name attribute to allow target loading route into this outlet instead of the primary outlet-->
 <router-outlet name="chat"></router-outlet>

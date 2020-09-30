@@ -5,14 +5,13 @@ import {BlogsComponent} from './blogs/blogs.component';
 import {BlogComponent} from './blog/blog.component';
 
 import {BlogsService} from './services/blogs.service';
-import {Routes} from '@angular/router';
 import {BlogsRoutingModule} from './blogs-routing.module';
 
-const blogsRoutes: Routes = [
+/*const blogsRoutes: Routes = [
   {
     path: 'blogs', component: BlogsComponent
   }
-];
+];*/
 
 @NgModule({
   imports: [

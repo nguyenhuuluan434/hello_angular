@@ -13,7 +13,6 @@ export class BlogsComponent implements OnInit {
   constructor(private blogsService: BlogsService) { }
 
   ngOnInit() {
-    debugger
     this.posts = this.blogsService.posts;
   }
 }
